@@ -1,11 +1,174 @@
-[gd_scene load_steps=4 format=3 uid="uid://bdq1fqcfex1a8"]
+[gd_scene load_steps=12 format=3 uid="uid://comvjvdr77f48"]
 
 [ext_resource type="Script" path="res://Menu.gd" id="1_r2thv"]
+[ext_resource type="Texture2D" uid="uid://2ok7st5ep8td" path="res://Maps/bg sample.jpg" id="2_gd854"]
+[ext_resource type="FontFile" uid="uid://c1r6wut7sljrb" path="res://Fonts/ldfcomicsans-font/Minecraft.ttf" id="3_83hpy"]
+[ext_resource type="Texture2D" uid="uid://bjkhg0jk2ij81" path="res://Characters/sample/World01_006_Witch.png" id="4_5lo87"]
+[ext_resource type="Texture2D" uid="uid://bk33kldccv5xd" path="res://Characters/sample/World01_007_Pirate.png" id="5_6wseu"]
+[ext_resource type="Texture2D" uid="uid://cxo0otdv43xv8" path="res://Characters/sample/World04_003_ Outlaw.png" id="6_omai6"]
 
 [sub_resource type="Theme" id="Theme_yr5g7"]
 default_font_size = 50
 
 [sub_resource type="Theme" id="Theme_pisb5"]
+
+[sub_resource type="Animation" id="Animation_jrbsh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(167, 584)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(826, 567)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(321, 575)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite1:flip_h")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprite3:flip_h")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Sprite2:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.767945]
+}
+
+[sub_resource type="Animation" id="Animation_c3pvu"]
+resource_name = "movement"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6, 1, 1.4, 1.8, 2.2, 3.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(167, 584), Vector2(180, 584), Vector2(180, 570), Vector2(180, 584), Vector2(180, 570), Vector2(180, 584), Vector2(167, 584)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.6, 1, 1.4, 1.6, 2, 2.2, 2.4, 3.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(826, 567), Vector2(836, 582), Vector2(854, 580), Vector2(890, 579), Vector2(885.077, 589), Vector2(875.231, 560), Vector2(865.385, 550), Vector2(861.009, 540), Vector2(826, 567)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.6, 1, 1.4, 1.8, 2.2, 3.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(321, 575), Vector2(300, 575), Vector2(302.471, 560), Vector2(304.942, 575), Vector2(307.412, 560), Vector2(309.883, 575), Vector2(321, 575)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite1:flip_h")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 2.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprite3:flip_h")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 2.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Sprite2:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 2, 2.6, 2.8, 3.03333, 3.23333, 3.26667, 3.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [3.48787e-16, 3.48787e-16, -0.767945, -1.2706, -3.22886, -6.28319, 3.48787e-16, 3.33067e-16]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_p71j1"]
+_data = {
+"RESET": SubResource("Animation_jrbsh"),
+"movement": SubResource("Animation_c3pvu")
+}
 
 [node name="Node" type="Node"]
 script = ExtResource("1_r2thv")
@@ -15,6 +178,16 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="Background" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 28.85
+anchor_bottom = 16.175
+offset_right = -9.15527e-05
+offset_bottom = -4.57764e-05
+texture = ExtResource("2_gd854")
+expand_mode = 1
 
 [node name="Pcontainer" type="PanelContainer" parent="Control"]
 layout_mode = 1
@@ -77,13 +250,75 @@ alignment = 1
 
 [node name="Button" type="Button" parent="Control"]
 layout_mode = 0
-offset_left = 527.0
-offset_top = 102.0
-offset_right = 754.0
-offset_bottom = 226.0
+offset_left = 435.0
+offset_top = 508.0
+offset_right = 662.0
+offset_bottom = 632.0
 text = "test"
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 260.0
+offset_top = 22.0
+offset_right = 848.0
+offset_bottom = 122.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_83hpy")
+theme_override_font_sizes/font_size = 100
+text = "G R A T O S"
+
+[node name="Sprite1" type="Sprite2D" parent="Control"]
+position = Vector2(167, 584)
+texture = ExtResource("4_5lo87")
+flip_h = true
+
+[node name="Sprite_button" type="Button" parent="Control/Sprite1"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -52.0
+offset_top = -55.0
+offset_right = -44.0
+offset_bottom = -47.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+
+[node name="Sprite2" type="Sprite2D" parent="Control"]
+position = Vector2(826, 567)
+rotation = -0.767945
+texture = ExtResource("5_6wseu")
+
+[node name="Sprite_button2" type="Button" parent="Control/Sprite2"]
+offset_left = -35.0
+offset_top = -50.0
+offset_right = 69.0
+offset_bottom = 54.0
+flat = true
+
+[node name="Sprite3" type="Sprite2D" parent="Control"]
+position = Vector2(321, 575)
+skew = 0.0151127
+texture = ExtResource("6_omai6")
+flip_h = true
+
+[node name="Sprite_button3" type="Button" parent="Control/Sprite3"]
+offset_left = -36.0
+offset_top = -51.0
+offset_right = 68.0
+offset_bottom = 53.0
+flat = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Control"]
+libraries = {
+"": SubResource("AnimationLibrary_p71j1")
+}
+autoplay = "movement"
 
 [connection signal="button_down" from="Control/Pcontainer/Play" to="." method="_on_play_button_down"]
 [connection signal="text_submitted" from="Control/HBoxContainer/IP_owner" to="." method="_on_ip_text_submitted"]
 [connection signal="pressed" from="Control/HBoxContainer/Join" to="." method="_on_join_pressed"]
 [connection signal="pressed" from="Control/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Control/Sprite1/Sprite_button" to="." method="_on_sprite_button_pressed"]
+[connection signal="pressed" from="Control/Sprite2/Sprite_button2" to="." method="_on_sprite_button_pressed"]
+[connection signal="pressed" from="Control/Sprite3/Sprite_button3" to="." method="_on_sprite_button_pressed"]

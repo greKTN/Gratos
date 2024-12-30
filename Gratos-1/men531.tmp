@@ -1,0 +1,52 @@
+[gd_scene load_steps=5 format=3 uid="uid://dutr2oemjaq4x"]
+
+[ext_resource type="Script" path="res://menu.gd" id="1_qb7dk"]
+[ext_resource type="Texture2D" uid="uid://v0bi6vo67w8v" path="res://Sprites/fondo2.jpeg" id="2_6tpdh"]
+[ext_resource type="FontFile" uid="uid://c1r6wut7sljrb" path="res://Fonts/Minecraft.ttf" id="3_83hpy"]
+[ext_resource type="Theme" uid="uid://cd03dsumyyjaq" path="res://custom.tres" id="4_r0w5c"]
+
+[node name="Menu" type="Node2D"]
+process_mode = 3
+script = ExtResource("1_qb7dk")
+
+[node name="Fondo" type="Node2D" parent="."]
+
+[node name="background1" type="Sprite2D" parent="Fondo"]
+position = Vector2(576.932, 326)
+scale = Vector2(1.11341, 0.628906)
+texture = ExtResource("2_6tpdh")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 380.0
+offset_top = 15.0
+offset_right = 791.0
+offset_bottom = 86.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_83hpy")
+theme_override_font_sizes/font_size = 70
+text = "G R A T O S"
+
+[node name="Button" type="Button" parent="."]
+offset_left = 416.0
+offset_top = 421.0
+offset_right = 737.0
+offset_bottom = 510.0
+theme = ExtResource("4_r0w5c")
+theme_override_fonts/font = ExtResource("3_83hpy")
+theme_override_font_sizes/font_size = 70
+text = "Jugar"
+
+[node name="Button2" type="Button" parent="."]
+offset_left = 416.0
+offset_top = 548.0
+offset_right = 724.0
+offset_bottom = 632.0
+theme = ExtResource("4_r0w5c")
+theme_override_fonts/font = ExtResource("3_83hpy")
+theme_override_font_sizes/font_size = 70
+text = "Salir"
+
+[connection signal="focus_entered" from="Button" to="." method="_on_button_focus_entered"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

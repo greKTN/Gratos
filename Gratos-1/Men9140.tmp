@@ -1,0 +1,89 @@
+[gd_scene load_steps=4 format=3 uid="uid://bdq1fqcfex1a8"]
+
+[ext_resource type="Script" path="res://Menu.gd" id="1_r2thv"]
+
+[sub_resource type="Theme" id="Theme_yr5g7"]
+default_font_size = 50
+
+[sub_resource type="Theme" id="Theme_pisb5"]
+
+[node name="Node" type="Node"]
+script = ExtResource("1_r2thv")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Pcontainer" type="PanelContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 186.0
+offset_top = 272.0
+offset_right = 869.0
+offset_bottom = 349.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_yr5g7")
+
+[node name="Play" type="Button" parent="Control/Pcontainer"]
+layout_mode = 2
+text = "PLay"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control"]
+layout_mode = 1
+offset_left = 205.0
+offset_top = 369.0
+offset_right = 889.0
+offset_bottom = 445.0
+
+[node name="IP_owner" type="LineEdit" parent="Control/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+placeholder_text = "Ingresa IP del host"
+alignment = 1
+
+[node name="Join" type="Button" parent="Control/HBoxContainer"]
+custom_minimum_size = Vector2(180, 0)
+layout_mode = 2
+text = "Join"
+
+[node name="PanelContainer" type="PanelContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 4.42
+anchor_top = 0.5
+anchor_right = 4.42
+anchor_bottom = 0.5
+offset_left = 20.2
+offset_top = 417.0
+offset_right = 715.2
+offset_bottom = 478.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_pisb5")
+
+[node name="Player_name" type="LineEdit" parent="Control/PanelContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+placeholder_text = "Ingrese un nombre"
+alignment = 1
+
+[node name="Button" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 527.0
+offset_top = 102.0
+offset_right = 754.0
+offset_bottom = 226.0
+text = "test"
+
+[connection signal="button_down" from="Control/Pcontainer/Play" to="." method="_on_play_button_down"]
+[connection signal="text_submitted" from="Control/HBoxContainer/IP_owner" to="." method="_on_ip_text_submitted"]
+[connection signal="pressed" from="Control/HBoxContainer/Join" to="." method="_on_join_pressed"]
+[connection signal="pressed" from="Control/Button" to="." method="_on_button_pressed"]
